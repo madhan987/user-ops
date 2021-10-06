@@ -23,7 +23,7 @@ public class UserEntity {
 	@Column(name = "ID")
 	private int userId;
 
-	@Column(name = "EMAIL", unique = true)
+	@Column(name = "EMAIL", unique = true, nullable = false)
 	private String userEmail;
 
 	@Column(name = "DOC_LOCATION")
