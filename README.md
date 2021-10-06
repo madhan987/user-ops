@@ -1,22 +1,22 @@
 # user-ops
 
-This service is consumer-facing service which will accept request from the user and validated the request and send the validated request to **data-handler** service to process and store the data in file format.
+This service is consumer-facing service which will accept request from the user which validates the request and send the validated request to **data-handler** service, to process and store the data in file format.
 
-**Steps to setup and run the user-ops service**
+**Steps to setup and run the user-ops service :**
 
-1.Go to the [Apache Kafka downloads](https://kafka.apache.org/downloads) page and download the [Scala 2.3.0 kafka_2.12-2.3.0.tgz](https://archive.apache.org/dist/kafka/2.3.0/kafka_2.12-2.3.0.tgz).
+1.Go to [Apache Kafka downloads](https://kafka.apache.org/downloads) page and download the [Scala 2.3.0 kafka_2.12-2.3.0.tgz](https://archive.apache.org/dist/kafka/2.3.0/kafka_2.12-2.3.0.tgz).
 
-2.Next unzip it to a particular location and
+2.Unzip the file to a particular location
 
->   a. Open a command prompt and start the Zookeeper using below command.
+>   a. Open a command prompt and start the Zookeeper using the below command.
 >   
   	zookeeper-server-start.bat {file_location}\config\zookeeper.properties
   	      
->   b. Open a new command prompt and start the Apache Kafka using below command.
+>   b. Open a new command prompt and start the Apache Kafka using the below command.
 >   
   	kafka-server-start.bat {file_location}\config\server.properties	      
 
->   c. Open a new command prompt and create a topic with name data-processor, that has only one partition & one replica using below command.
+>   c. Open a new command prompt and create a topic with name data-processor, it has only one partition & one replica using below command.
 >   
   	kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 -topic data-processor 	
  
@@ -28,11 +28,11 @@ This service is consumer-facing service which will accept request from the user 
 
 6.Once build is **Success**, run the application as java or spring boot App.
 
-7.Once application is started access the API's using swagger [user-ops swager](http://localhost:8082/user-ops/swagger-ui.html).
+7.After the application is started, access the API's using swagger [user-ops swager](http://localhost:8082/user-ops/swagger-ui.html).
 
-8.Application supports 3 API as listed below :
+8.Application supports 3 below listed API's :
 
->  a. Store : Accepts valid JSON as input and file type as request parameter (Email should be unique and mandatory),sample input: 
+>  a. Store : Accepts valid JSON as input and file type as request parameter (Email should be unique and mandatory value),sample input: 
 >
 			{
 			  "id": 1,
@@ -45,7 +45,7 @@ This service is consumer-facing service which will accept request from the user 
 
 >  b. Read : Accepts email id as input and response will be JSON data.
 
->  c. Update : Same as store API,used to update existing data.
+>  c. Update : Process is similar to store API where the additional feature is to update the existing data with email as reference.
 	
 
 
