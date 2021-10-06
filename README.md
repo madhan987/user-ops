@@ -9,13 +9,16 @@ This service is consumer-facing service which will accept request from the user 
 2.Next unzip it to a particular location and
 
 >   a. Open a command prompt and start the Zookeeper using below command.
-  	      ``zookeeper-server-start.bat {file_location}\config\zookeeper.properties``
+>   
+  	zookeeper-server-start.bat {file_location}\config\zookeeper.properties
   	      
 >   b. Open a new command prompt and start the Apache Kafka using below command.
-  	      ``kafka-server-start.bat {file_location}\config\server.properties`` 	      
+>   
+  	kafka-server-start.bat {file_location}\config\server.properties	      
 
 >   c. Open a new command prompt and create a topic with name data-processor, that has only one partition & one replica using below command.
-  	      ``kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 -topic data-processor`` 	
+>   
+  	kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 -topic data-processor 	
  
 3.Change the SQL connection details as per your system in application properties and create new schema with name **user_data**.
  	       	       	      
@@ -29,9 +32,8 @@ This service is consumer-facing service which will accept request from the user 
 
 8.Application supports 3 API as listed below :
 
->  a. Store : Accepts valid JSON as input and file type as request parameter (Email should be unique and mandatory).
-
-		sample input: 
+>  a. Store : Accepts valid JSON as input and file type as request parameter (Email should be unique and mandatory),sample input: 
+>
 			{
 			  "id": 1,
 			  "name": "sam",
