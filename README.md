@@ -32,7 +32,7 @@ This service is consumer-facing service which will accept request from the user 
 
 8.Application supports 3 below listed API's :
 
->  a. Store : Accepts valid JSON as input and file type as request parameter (Email should be unique and mandatory value),sample input: 
+>  a. Store : Accepts valid JSON as input and file type as request parameter (Email should be unique and mandatory value),sample input : 
 >
 			{
 			  "id": 1,
